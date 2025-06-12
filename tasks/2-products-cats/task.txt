@@ -1,0 +1,6 @@
+RESTful standard:
+- users
+- categories
+- products
+- orders
+dummy data return.
