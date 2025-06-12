@@ -1,0 +1,21 @@
+EigenAgents:
+- Backend (admin panel, customer panel)
+- Developer API
+
+
+- Authorization
+    - /connect: auth_key+mode+name ~> success:True, session_key: FJ2F3KLF2LKHF2LKH
+      POST /connect
+        {
+            "auth_key": "LKFJLKF2JLKF2JL",
+            "mode": "voice", # chat
+            "name": "Hotel v6"
+        }
+- Voice Assistants
+    - POST /link {"session_key":"FJ2F3KLF2LKHF2LKH"} ~> {"host": "eigensol.com", "port": 4401, "protocol": "wss://", "success": True}
+
+- Chatbots
+    - /verify {"session_key": "XXXXXX"} ~> True/False. Message, Code {"success": False, "code": 3, "message": "Session timed out. please start new session"}
+    - /message {"session_key": "XXXXXX", "message": "Hi! How are you ?"} ~> success,reply
+    - POST /data {"session_key": "XXXXXX", "payload": {"theme": "Dark"}} ~> success: True,False
+
