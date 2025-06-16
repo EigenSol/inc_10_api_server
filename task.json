@@ -1,0 +1,233 @@
+{
+    "info": {
+      "name": "Task_2",
+      "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+      "description": "API for Users, Categories, Products, Orders.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Users",
+        "item": [
+          {
+            "name": "Get All Users",
+            "request": { "method": "GET", "url": "{{base_url}}/users" }
+          },
+          {
+            "name": "Get User by ID",
+            "request": {
+              "method": "GET",
+              "url": { "raw": "{{base_url}}/users/1", "host": ["{{base_url}}"], "path": ["users", "1"] }
+            }
+          },
+          {
+            "name": "Create User",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"id\": 3,\n  \"name\": \"Ahmad\"\n}"
+              },
+              "url": { "raw": "{{base_url}}/users", "host": ["{{base_url}}"], "path": ["users"] }
+            }
+          },
+          {
+            "name": "Update User",
+            "request": {
+              "method": "PUT",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"name\": \"Ali Updated\"\n}"
+              },
+              "url": { "raw": "{{base_url}}/users/1", "host": ["{{base_url}}"], "path": ["users", "1"] }
+            }
+          },
+          {
+            "name": "Delete User",
+            "request": {
+              "method": "DELETE",
+              "url": { "raw": "{{base_url}}/users/1", "host": ["{{base_url}}"], "path": ["users", "1"] }
+            }
+          },
+          {
+            "name": "Get Orders by User",
+            "request": {
+              "method": "GET",
+              "url": { "raw": "{{base_url}}/users/1/orders", "host": ["{{base_url}}"], "path": ["users", "1", "orders"] }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Categories",
+        "item": [
+          {
+            "name": "Get All Categories",
+            "request": { "method": "GET", "url": "{{base_url}}/categories" }
+          },
+          {
+            "name": "Get Category by ID",
+            "request": {
+              "method": "GET",
+              "url": { "raw": "{{base_url}}/categories/1", "host": ["{{base_url}}"], "path": ["categories", "1"] }
+            }
+          },
+          {
+            "name": "Create Category",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"id\": 3,\n  \"name\": \"Shoes\"\n}"
+              },
+              "url": { "raw": "{{base_url}}/categories", "host": ["{{base_url}}"], "path": ["categories"] }
+            }
+          },
+          {
+            "name": "Update Category",
+            "request": {
+              "method": "PUT",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"name\": \"Electronics Updated\"\n}"
+              },
+              "url": { "raw": "{{base_url}}/categories/1", "host": ["{{base_url}}"], "path": ["categories", "1"] }
+            }
+          },
+          {
+            "name": "Delete Category",
+            "request": {
+              "method": "DELETE",
+              "url": { "raw": "{{base_url}}/categories/1", "host": ["{{base_url}}"], "path": ["categories", "1"] }
+            }
+          },
+          {
+            "name": "Get Products by Category",
+            "request": {
+              "method": "GET",
+              "url": { "raw": "{{base_url}}/categories/1/products", "host": ["{{base_url}}"], "path": ["categories", "1", "products"] }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Products",
+        "item": [
+          {
+            "name": "Get All Products",
+            "request": { "method": "GET", "url": "{{base_url}}/products" }
+          },
+          {
+            "name": "Get Product by ID",
+            "request": {
+              "method": "GET",
+              "url": { "raw": "{{base_url}}/products/1", "host": ["{{base_url}}"], "path": ["products", "1"] }
+            }
+          },
+          {
+            "name": "Create Product",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"id\": 3,\n  \"name\": \"Shoe\",\n  \"category_id\": 3\n}"
+              },
+              "url": { "raw": "{{base_url}}/products", "host": ["{{base_url}}"], "path": ["products"] }
+            }
+          },
+          {
+            "name": "Update Product",
+            "request": {
+              "method": "PUT",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"name\": \"Laptop Updated\"\n}"
+              },
+              "url": { "raw": "{{base_url}}/products/1", "host": ["{{base_url}}"], "path": ["products", "1"] }
+            }
+          },
+          {
+            "name": "Delete Product",
+            "request": {
+              "method": "DELETE",
+              "url": { "raw": "{{base_url}}/products/1", "host": ["{{base_url}}"], "path": ["products", "1"] }
+            }
+          },
+          {
+            "name": "Search Products by Name",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "{{base_url}}/products/search?name=Laptop",
+                "host": ["{{base_url}}"],
+                "path": ["products", "search"],
+                "query": [
+                  { "key": "name", "value": "Laptop" }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "item": [
+          {
+            "name": "Get All Orders",
+            "request": { "method": "GET", "url": "{{base_url}}/orders" }
+          },
+          {
+            "name": "Get Order by ID",
+            "request": {
+              "method": "GET",
+              "url": { "raw": "{{base_url}}/orders/1", "host": ["{{base_url}}"], "path": ["orders", "1"] }
+            }
+          },
+          {
+            "name": "Create Order",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"id\": 3,\n  \"user_id\": 1,\n  \"product_ids\": [1,2]\n}"
+              },
+              "url": { "raw": "{{base_url}}/orders", "host": ["{{base_url}}"], "path": ["orders"] }
+            }
+          },
+          {
+            "name": "Update Order",
+            "request": {
+              "method": "PUT",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"product_ids\": [1]\n}"
+              },
+              "url": { "raw": "{{base_url}}/orders/1", "host": ["{{base_url}}"], "path": ["orders", "1"] }
+            }
+          },
+          {
+            "name": "Delete Order",
+            "request": {
+              "method": "DELETE",
+              "url": { "raw": "{{base_url}}/orders/1", "host": ["{{base_url}}"], "path": ["orders", "1"] }
+            }
+          }
+        ]
+      }
+    ],
+    "variable": [
+      {
+        "key": "base_url",
+        "value": "http://127.0.0.1:5000"
+      }
+    ]
+  }
+  

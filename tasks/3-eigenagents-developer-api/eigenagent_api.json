@@ -1,0 +1,163 @@
+{
+    "info": {
+      "name": "EigenAgents API",
+      "_postman_id": "eigenagents-api-collection-001",
+      "description": "Test collection for EigenAgents Flask API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Connect",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"auth_key\": \"LKFJLKF2JLKF2JL\",\n    \"mode\": \"voice\",\n    \"name\": \"Hotel v6\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/connect",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["connect"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Link (Voice Assistants)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"session_key\": \"{{session_key}}\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/link",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["link"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Verify (Chatbots)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"session_key\": \"{{session_key}}\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/verify",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["verify"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Send Message (Chatbots)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"session_key\": \"{{session_key}}\",\n    \"message\": \"Hi! How are you ?\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/message",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["message"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Send Data (Chatbots)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"session_key\": \"{{session_key}}\",\n    \"payload\": {\n        \"theme\": \"Dark\"\n    }\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/data",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["data"]
+          }
+        },
+        "response": []
+      }
+    ],
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "exec": [],
+          "type": "text/javascript"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "exec": [],
+          "type": "text/javascript"
+        }
+      }
+    ],
+    "variable": [
+      {
+        "key": "session_key",
+        "value": ""
+      }
+    ]
+  }
+  
